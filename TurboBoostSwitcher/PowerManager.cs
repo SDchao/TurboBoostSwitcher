@@ -12,6 +12,7 @@ namespace TurboBoostSwitcher
         private string scheme_GUID;
         private string sub_GUID;
         private string setting_GUID;
+        public int value;
 
         public PowerManager()
         {
@@ -39,7 +40,13 @@ namespace TurboBoostSwitcher
                 throw new Exception("CmdError:" + queryResult.error
                     + "&CmdResult:" + queryResult.result);
 
-            Console.WriteLine(scheme_GUID + "\n" + sub_GUID + "\n" + setting_GUID);
+            //查找当前CPU设置
+            int startIndex = queryResult.result.IndexOf("最大处理器状态");
+            Regex rValue = new Regex(@"交流电源设置索引: 0x([0-9]+)");
+            Console.WriteLine(rValue.Match(queryResult.result,startIndex).Groups[1].ToString());
+            value = Convert.ToInt32(rValue.Match(queryResult.result,startIndex).Groups[1].ToString(),16);
+
+            Console.WriteLine(scheme_GUID + "\n" + sub_GUID + "\n" + setting_GUID + "\n" + value);
         }
 
         public bool SetMaxCpu(int num)
@@ -52,7 +59,7 @@ namespace TurboBoostSwitcher
                 scheme_GUID + " " + sub_GUID + " " + setting_GUID + " " + num.ToString();
             string command2 = "powercfg /setdcvalueindex " +
                 scheme_GUID + " " + sub_GUID + " " + setting_GUID + " " + num.ToString();
-            string command3 = "powercfg /s " + sub_GUID;
+            string command3 = "powercfg /s " + scheme_GUID;
             CmdResult result = CmdRunner.CmdRun(command1 + "&" + command2 + "&" + command3);
             if (result.error == string.Empty)
                 return true;

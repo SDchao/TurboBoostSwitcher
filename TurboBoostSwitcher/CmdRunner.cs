@@ -15,7 +15,7 @@ namespace TurboBoostSwitcher
 
         public CmdResult(string r, string e)
         {
-            result = r.Substring(0, r.Length - 1);
+            result = r;
             error = e;
         }
 

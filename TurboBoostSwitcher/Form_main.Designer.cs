@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_main));
             this.button_switch = new System.Windows.Forms.Button();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // button_switch
@@ -41,15 +44,21 @@
             this.button_switch.UseVisualStyleBackColor = true;
             this.button_switch.Click += new System.EventHandler(this.button_switch_Click);
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "切换睿频";
+            this.notifyIcon.Visible = true;
+            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 149);
             this.Controls.Add(this.button_switch);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form_main";
-            this.ShowIcon = false;
             this.Text = "TurboBoostSwitcher";
             this.Load += new System.EventHandler(this.Form_main_Load);
             this.ResumeLayout(false);
@@ -59,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Button button_switch;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 

@@ -13,6 +13,7 @@ namespace TurboBoostSwitcher
 {
     public partial class Form_main : Form
     {
+        PowerManager powerManager;
         public Form_main()
         {
             InitializeComponent();
@@ -20,8 +21,7 @@ namespace TurboBoostSwitcher
 
         private void Form_main_Load(object sender, EventArgs e)
         {
-            //获取当前电源方案UID
-            
+            powerManager = new PowerManager();     
         }
     }
 }

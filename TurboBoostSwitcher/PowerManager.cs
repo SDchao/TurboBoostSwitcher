@@ -12,7 +12,8 @@ namespace TurboBoostSwitcher
         private readonly string scheme_GUID;
         private readonly string sub_GUID;
         private readonly string setting_GUID;
-        public int value;
+        public int maxValue;
+        public int minValue;
 
         public PowerManager()
         {
@@ -41,12 +42,28 @@ namespace TurboBoostSwitcher
                     + "&CmdResult:" + queryResult.result);
 
             //查找当前CPU设置
+            //查找最大处理器状态
             int startIndex = queryResult.result.IndexOf("最大处理器状态");
             Regex rValue = new Regex(@"交流电源设置索引: 0x([0-9]+)");
-            Console.WriteLine(rValue.Match(queryResult.result,startIndex).Groups[1].ToString());
-            value = Convert.ToInt32(rValue.Match(queryResult.result,startIndex).Groups[1].ToString(),16);
+            maxValue = Convert.ToInt32(rValue.Match(queryResult.result,startIndex).Groups[1].ToString(),16);
 
-            Console.WriteLine(scheme_GUID + "\n" + sub_GUID + "\n" + setting_GUID + "\n" + value);
+            //查找最小处理器状态
+            startIndex = queryResult.result.IndexOf("最小处理器状态");
+            minValue = Convert.ToInt32(rValue.Match(queryResult.result, startIndex).Groups[1].ToString(), 16);
+            //若最小处理器状态过大
+            if(minValue == 100)
+            {
+                //查找最小处理器状态GUID
+                rSet = new Regex(@"电源设置 GUID: ([a-z0-9\-]+)  \(最小处理器状态\)");
+                string minSettingGUID = rSet.Match(queryResult.result).Groups[1].ToString();
+
+                //设置最小CPU为99
+                string command1 = "powercfg /setacvalueindex " +
+                scheme_GUID + " " + sub_GUID + " " + minSettingGUID + " 99";
+                string command2 = "powercfg /setdcvalueindex " +
+                    scheme_GUID + " " + sub_GUID + " " + minSettingGUID + " 99";
+                CmdRunner.CmdRun(command1 + "&" + command2);
+            }
         }
 
         public bool SetMaxCpu(int num)

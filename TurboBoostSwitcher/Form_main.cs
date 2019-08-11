@@ -43,7 +43,7 @@ namespace TurboBoostSwitcher
             checkBox_minOnLoad.Checked = configManager.minimizedOnLoad;
             checkBox_runOnStart.Checked = configManager.runOnStart;
 
-            if (powerManager.value == 100)
+            if (powerManager.maxValue == 100)
             {
                 isBoosting = true;
             }     

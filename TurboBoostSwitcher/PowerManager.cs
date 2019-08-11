@@ -9,9 +9,9 @@ namespace TurboBoostSwitcher
 {
     class PowerManager
     {
-        private string scheme_GUID;
-        private string sub_GUID;
-        private string setting_GUID;
+        private readonly string scheme_GUID;
+        private readonly string sub_GUID;
+        private readonly string setting_GUID;
         public int value;
 
         public PowerManager()

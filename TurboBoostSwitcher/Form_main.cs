@@ -34,7 +34,7 @@ namespace TurboBoostSwitcher
             catch (Exception ex)
             {
                 MessageBox.Show("初始化错误\n详细错误信息已写入日志");
-                StreamWriter writer = File.CreateText(Environment.CurrentDirectory + "\\error.log");
+                StreamWriter writer = File.CreateText(AppDomain.CurrentDomain.BaseDirectory + "error.log");
                 writer.Write(ex.Message + Environment.NewLine + ex.StackTrace);
                 writer.Close();
                 Application.Exit();

@@ -14,20 +14,21 @@ namespace TurboBoostSwitcher
         private readonly string setting_GUID;
         public int maxValue;
         public int minValue;
+        private string logPath;
 
         public PowerManager()
         {
-
+            logPath = AppDomain.CurrentDomain.BaseDirectory + "runtime.log";
             //写出查询结果日志
-            if (!File.Exists("runtime.log"))
-                File.Create("runtime.log").Close();
+            if (!File.Exists(logPath))
+                File.Create(logPath).Close();
             else
             {
                 //若文件超过100k则清空
-                FileInfo fileInfo = new FileInfo("runtime.log");
+                FileInfo fileInfo = new FileInfo(logPath);
                 if(fileInfo.Length > 100 * 1024)
                 {
-                    File.Create("runtime.log").Close();
+                    File.Create(logPath).Close();
                 }
             }
 
@@ -111,7 +112,7 @@ namespace TurboBoostSwitcher
 
         public void Log(string Message)
         {
-            StreamWriter debugWriter = new StreamWriter(File.Open("runtime.log", FileMode.Append));
+            StreamWriter debugWriter = new StreamWriter(File.Open(logPath, FileMode.Append));
             debugWriter.WriteLine("[" + DateTime.Now + "]" + Message);
             debugWriter.Close();
         }

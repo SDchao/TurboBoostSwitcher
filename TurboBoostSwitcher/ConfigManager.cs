@@ -15,7 +15,7 @@ namespace TurboBoostSwitcher
         private readonly string configPath;
         public ConfigManager()
         {
-            configPath = Environment.CurrentDirectory + "\\config.xml";
+            configPath = AppDomain.CurrentDomain.BaseDirectory + "config.xml";
             if (!File.Exists(configPath))
             {
                 InitCfg();                                

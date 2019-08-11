@@ -14,7 +14,7 @@ namespace TurboBoostSwitcher
         private readonly string setting_GUID;
         public int maxValue;
         public int minValue;
-        private string logPath;
+        private readonly string logPath;
 
         public PowerManager()
         {

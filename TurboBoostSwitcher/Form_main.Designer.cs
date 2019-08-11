@@ -117,6 +117,7 @@
             this.MaximizeBox = false;
             this.Name = "Form_main";
             this.Text = "TurboBoostSwitcher";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_main_FormClosing);
             this.Load += new System.EventHandler(this.Form_main_Load);
             this.SizeChanged += new System.EventHandler(this.Form_main_Resized);
             this.contextMenuStrip_icon.ResumeLayout(false);

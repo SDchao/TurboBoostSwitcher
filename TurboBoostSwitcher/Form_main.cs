@@ -141,5 +141,10 @@ namespace TurboBoostSwitcher
             configManager.minimizedOnLoad = checkBox_minOnLoad.Checked;
             configManager.SaveCfg();
         }
+
+        private void Form_main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            notifyIcon.Dispose();
+        }
     }
 }

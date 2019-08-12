@@ -17,3 +17,8 @@
 您可以在Bilibili上关注我：[点击关注](https://space.bilibili.com/12263994)
 
 如果软件对您有用的话，欢迎捐赠！
+
+<div align=center>
+  <img width="50%" height="50%" src="https://raw.githubusercontent.com/SDchao/TurboBoostSwitcher/master/TurboBoostSwitcher/Resources/wechat.png"/>  
+ <img width="50%" height="50%" src="https://raw.githubusercontent.com/SDchao/TurboBoostSwitcher/master/TurboBoostSwitcher/Resources/alipay.jpg"/>
+</div>

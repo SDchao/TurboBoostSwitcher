@@ -18,7 +18,7 @@
 
 如果软件对您有用的话，欢迎捐赠！
 
-<div align=center>
-  <img width="50%" height="50%" src="https://raw.githubusercontent.com/SDchao/TurboBoostSwitcher/master/TurboBoostSwitcher/Resources/wechat.png"/>  
- <img width="50%" height="50%" src="https://raw.githubusercontent.com/SDchao/TurboBoostSwitcher/master/TurboBoostSwitcher/Resources/alipay.jpg"/>
+<div align=center display="inline-block">
+  <img valign="middle" width="50%" height="50%" src="https://raw.githubusercontent.com/SDchao/TurboBoostSwitcher/master/TurboBoostSwitcher/Resources/wechat.png"/>  
+ <img valign="middle" width="50%" height="50%" src="https://raw.githubusercontent.com/SDchao/TurboBoostSwitcher/master/TurboBoostSwitcher/Resources/alipay.jpg"/>
 </div>

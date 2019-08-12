@@ -146,5 +146,11 @@ namespace TurboBoostSwitcher
         {
             notifyIcon.Dispose();
         }
+
+        private void donate_Click(object sender, EventArgs e)
+        {
+            Form_donate form_Donate = new Form_donate();
+            form_Donate.ShowDialog();
+        }
     }
 }

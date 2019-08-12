@@ -37,6 +37,8 @@
             this.exit = new System.Windows.Forms.ToolStripMenuItem();
             this.checkBox_runOnStart = new System.Windows.Forms.CheckBox();
             this.checkBox_minOnLoad = new System.Windows.Forms.CheckBox();
+            this.label_copyright = new System.Windows.Forms.Label();
+            this.donate = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip_icon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,21 +67,22 @@
             // 
             this.contextMenuStrip_icon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.maxsize,
+            this.donate,
             this.exit});
             this.contextMenuStrip_icon.Name = "contextMenuStrip_icon";
-            this.contextMenuStrip_icon.Size = new System.Drawing.Size(125, 48);
+            this.contextMenuStrip_icon.Size = new System.Drawing.Size(181, 92);
             // 
             // maxsize
             // 
             this.maxsize.Name = "maxsize";
-            this.maxsize.Size = new System.Drawing.Size(124, 22);
+            this.maxsize.Size = new System.Drawing.Size(180, 22);
             this.maxsize.Text = "显示窗口";
             this.maxsize.Click += new System.EventHandler(this.maxsize_Click);
             // 
             // exit
             // 
             this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(124, 22);
+            this.exit.Size = new System.Drawing.Size(180, 22);
             this.exit.Text = "退出";
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
@@ -105,11 +108,29 @@
             this.checkBox_minOnLoad.UseVisualStyleBackColor = true;
             this.checkBox_minOnLoad.CheckedChanged += new System.EventHandler(this.checkBox_minOnLoad_CheckedChanged);
             // 
+            // label_copyright
+            // 
+            this.label_copyright.AutoSize = true;
+            this.label_copyright.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label_copyright.Location = new System.Drawing.Point(224, 132);
+            this.label_copyright.Name = "label_copyright";
+            this.label_copyright.Size = new System.Drawing.Size(143, 12);
+            this.label_copyright.TabIndex = 4;
+            this.label_copyright.Text = "By SDchao from BiliBili";
+            // 
+            // donate
+            // 
+            this.donate.Name = "donate";
+            this.donate.Size = new System.Drawing.Size(180, 22);
+            this.donate.Text = "捐赠";
+            this.donate.Click += new System.EventHandler(this.donate_Click);
+            // 
             // Form_main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(370, 149);
+            this.Controls.Add(this.label_copyright);
             this.Controls.Add(this.checkBox_minOnLoad);
             this.Controls.Add(this.checkBox_runOnStart);
             this.Controls.Add(this.button_switch);
@@ -135,6 +156,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip_icon;
         private System.Windows.Forms.CheckBox checkBox_runOnStart;
         private System.Windows.Forms.CheckBox checkBox_minOnLoad;
+        private System.Windows.Forms.Label label_copyright;
+        private System.Windows.Forms.ToolStripMenuItem donate;
     }
 }
 

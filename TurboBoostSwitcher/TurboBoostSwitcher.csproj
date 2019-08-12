@@ -54,6 +54,12 @@
   <ItemGroup>
     <Compile Include="CmdRunner.cs" />
     <Compile Include="ConfigManager.cs" />
+    <Compile Include="Form_donate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_donate.Designer.cs">
+      <DependentUpon>Form_donate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_donate.resx">
+      <DependentUpon>Form_donate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_main.resx">
       <DependentUpon>Form_main.cs</DependentUpon>
     </EmbeddedResource>
